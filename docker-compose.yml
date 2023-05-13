@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  step-ca:
+    container_name: step-ca
+    image: smallstep/step-ca
+    ports:
+      - 9000:9000
+    volumes:
+        - data:/home/step
+    restart: unless-stopped
+
+volumes:
+  data:
