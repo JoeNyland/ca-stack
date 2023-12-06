@@ -4,11 +4,11 @@ services:
   step-ca:
     container_name: step-ca
     image: smallstep/step-ca
+    restart: unless-stopped
     ports:
       - 9000:9000
     volumes:
       - data:/home/step
-    restart: unless-stopped
 
 volumes:
   data:
