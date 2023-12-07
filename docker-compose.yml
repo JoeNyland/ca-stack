@@ -8,4 +8,4 @@ services:
     ports:
       - 9000:9000
     volumes:
-      - /containers/step-ca:/home/step
+      - /tank/containers/step-ca:/home/step
