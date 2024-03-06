@@ -7,5 +7,10 @@ services:
     restart: unless-stopped
     ports:
       - 9000:9000
+    labels:
+      traefik.enable: true
+      traefik.http.services.step-ca.loadbalancer.server.port: 9000
+      traefik.http.routers.step-ca.rule: Host(`ca`)
+      traefik.http.services.step-ca.loadbalancer.server.scheme: https
     volumes:
       - /containers/step-ca:/home/step
