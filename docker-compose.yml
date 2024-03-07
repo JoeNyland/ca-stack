@@ -10,7 +10,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.services.step-ca.loadbalancer.server.port: 9000
-      traefik.http.routers.step-ca.rule: Host(`ca`)
+      traefik.http.routers.step-ca.rule: Host(`ca`) || Host(`ca.home.joe.nyland.io`)
       traefik.http.services.step-ca.loadbalancer.server.scheme: https
     volumes:
       - /containers/step-ca:/home/step
