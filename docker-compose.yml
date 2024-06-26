@@ -6,7 +6,5 @@ services:
     image: smallstep/step-ca
     restart: unless-stopped
     network_mode: host
-    ports:
-      - 9000:9000
     volumes:
       - /containers/step-ca:/home/step
