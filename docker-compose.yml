@@ -4,5 +4,6 @@ services:
     image: smallstep/step-ca
     restart: unless-stopped
     network_mode: host
+    user: "993"
     volumes:
       - /containers/step-ca:/home/step
