@@ -3,7 +3,8 @@ services:
     container_name: step-ca
     image: smallstep/step-ca
     restart: unless-stopped
-    network_mode: host
+    ports:
+      - 9000:9000
     user: "993"
     volumes:
       - /containers/step-ca:/home/step
