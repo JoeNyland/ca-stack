@@ -6,5 +6,9 @@ services:
     ports:
       - 9000:9000
     user: "993"
+    labels:
+      traefik.enable: true
+      traefik.http.routers.uptime-kuma.rule: Host(`ca`) || Host(`ca.home.joe.nyland.io`)
+      traefik.http.routers.uptime-kuma.middlewares: trusted-ipallowlist
     volumes:
       - /containers/step-ca:/home/step
