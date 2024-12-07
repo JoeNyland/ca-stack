@@ -3,8 +3,8 @@ services:
     container_name: step-ca
     image: smallstep/step-ca
     restart: unless-stopped
-    ports:
-      - 9000:9000
+    expose:
+      - 9000
     networks:
       - default
       - proxy
