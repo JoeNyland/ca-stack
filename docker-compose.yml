@@ -11,8 +11,8 @@ services:
     user: "993"
     labels:
       traefik.enable: true
-      traefik.http.routers.uptime-kuma.rule: Host(`ca`) || Host(`ca.home.joe.nyland.io`)
-      traefik.http.routers.uptime-kuma.middlewares: trusted-ipallowlist
+      traefik.http.routers.step-ca.rule: Host(`ca`) || Host(`ca.home.joe.nyland.io`)
+      traefik.http.routers.step-ca.middlewares: trusted-ipallowlist
       traefik.http.services.step-ca.loadbalancer.server.scheme: https
     volumes:
       - /containers/step-ca:/home/step
