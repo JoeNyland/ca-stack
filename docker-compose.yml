@@ -5,19 +5,6 @@ services:
     restart: unless-stopped
     ports:
       - 9000:9000
-    networks:
-      - default
-      - proxy
     user: "993"
-    labels:
-      traefik.enable: true
-      traefik.http.routers.step-ca.rule: Host(`ca`) || Host(`ca.home.joe.nyland.io`)
-      traefik.http.routers.step-ca.middlewares: trusted-ipallowlist
-      traefik.http.services.step-ca.loadbalancer.server.scheme: https
     volumes:
       - /containers/step-ca:/home/step
-
-networks:
-  default:
-  proxy:
-    external: true
