@@ -3,8 +3,8 @@ services:
     container_name: step-ca
     image: smallstep/step-ca
     restart: unless-stopped
-    expose:
-      - 443
+    ports:
+      - 9000:9000
     networks:
       - default
       - proxy
@@ -13,6 +13,7 @@ services:
       traefik.enable: true
       traefik.http.routers.uptime-kuma.rule: Host(`ca`) || Host(`ca.home.joe.nyland.io`)
       traefik.http.routers.uptime-kuma.middlewares: trusted-ipallowlist
+      traefik.http.services.step-ca.loadbalancer.server.scheme: https
     volumes:
       - /containers/step-ca:/home/step
 
