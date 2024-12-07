@@ -1,5 +1,5 @@
 services:
-  ca:
+  step-ca:
     container_name: step-ca
     image: smallstep/step-ca
     restart: unless-stopped
